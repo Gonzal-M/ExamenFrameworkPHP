@@ -1,0 +1,27 @@
+---
+language: php
+sudo: false
+env:
+  global:
+    - GH_REF: github.com/shrikeh/teapot.git
+    - secure: "h8Q6F3ThS/pwBDMUg3Vj5zKqVhk2Birt1cZkbIxiFOMI2ptKHg+j6m9n3HTMRZq1jdEUrqnbqME3cCAAIs70dvw24ByeS7GJxzaBNLf/uA2nt6+6BiGvbAUqkVsCEMSyr7QqzsYMdbeGxEViuvgxhp3x6Fy9jIRz4kNdYJvzFUU="
+
+php:
+  - 5.3
+  - 5.4
+  - 5.5
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+before_install:
+  - composer self-update
+  - composer validate
+
+install:
+  - composer install --prefer-dist
+
+script:
+  - vendor/bin/phpcs --standard=PSR2 src -p
+...

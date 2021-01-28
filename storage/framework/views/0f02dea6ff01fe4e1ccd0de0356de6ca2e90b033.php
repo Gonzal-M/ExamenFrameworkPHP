@@ -1,0 +1,1 @@
+<?php /**PATH C:\Users\Clawc\Documents\B2-informatique\FrameworkPHP\ExamenFrameworkPHP_GonzalezMarie_B2A\resources\views/footer.blade.php ENDPATH**/ ?>
