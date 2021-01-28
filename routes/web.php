@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Nouvelles Publications
+Route::get('/newpost', 'App\Http\Controllers\PostsController@viewNewPost');
+Route::post('/newpost', 'App\Http\Controllers\PostsController@addNewPost');
