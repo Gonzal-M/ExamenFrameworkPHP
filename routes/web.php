@@ -22,16 +22,25 @@ Route::group([
     Route::get('/dashboard', 'App\Http\Controllers\accountcontroller@dashboard');
 
     Route::get('signout', 'App\Http\Controllers\accountcontroller@signout');
+
+    //PUBLICATIONS
+    //Nouvelle Publication
+    Route::get('/newpost', 'App\Http\Controllers\PostsController@viewNewPost');
+    Route::post('/newpost', 'App\Http\Controllers\PostsController@addNewPost');
+    //Affichage Publications
+    Route::get('/posts', 'App\Http\Controllers\PostsController@posts');
+    //Suppression Publication
+    Route::post('/posts', 'App\Http\Controllers\PostsController@delPost');
+    //Modification Publication
+    Route::get('/modpost', 'App\Http\Controllers\PostsController@viewModPost');
+    Route::post('/modpost', 'App\Http\Controllers\PostsController@modPost');
 });
 
 Route::get('/', function () {
     return view('index');
 });
 
-//Nouvelles Publications
-Route::get('/newpost', 'App\Http\Controllers\PostsController@viewNewPost');
-Route::post('/newpost', 'App\Http\Controllers\PostsController@addNewPost');
-Route::get('/posts', 'App\Http\Controllers\PostsController@posts');
+
 
 
 

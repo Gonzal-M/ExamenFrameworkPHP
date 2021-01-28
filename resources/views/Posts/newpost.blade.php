@@ -5,6 +5,7 @@
 <h1>Nouvelle publication</h1><br>
 
 <form action="/newpost" method="post" enctype="multipart/form-data" style="margin-left:10px;">
+    {{csrf_field()}}
 
     <div class="row">
         <label class="col-1">Titre :</label>

@@ -6,7 +6,8 @@
 
 <h1>Modification de la publication "{{$post->posttitle}}"</h1><br>
 
-<form action="/posts" method="post" enctype="multipart/form-data" style="margin-left:10px;">
+<form action="/modpost" method="post" enctype="multipart/form-data" style="margin-left:10px;">
+    {{csrf_field()}}
 
     <div class="row">
         <label class="col-1">Titre :</label>

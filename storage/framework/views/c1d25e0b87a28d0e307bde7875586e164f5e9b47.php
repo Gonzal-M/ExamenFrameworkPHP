@@ -17,6 +17,8 @@
         <p style="color:grey;">Publié le <?php echo e($post->created_at); ?></p>
         <a href="/modpost?post_id=<?php echo e($post->id); ?>" class="btn btn-info">Modifier</a>
         <form action="/posts" method="post">
+            <?php echo e(csrf_field()); ?>
+
             <input type="hidden" name="del_id" value="<?php echo e($post->id); ?>">
             <input type="submit" value="Supprimer" class="btn btn-danger">
         </form>

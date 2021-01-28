@@ -17,6 +17,7 @@
         <p style="color:grey;">Publié le {{$post->created_at}}</p>
         <a href="/modpost?post_id={{$post->id}}" class="btn btn-info">Modifier</a>
         <form action="/posts" method="post">
+            {{csrf_field()}}
             <input type="hidden" name="del_id" value="{{$post->id}}">
             <input type="submit" value="Supprimer" class="btn btn-danger">
         </form>

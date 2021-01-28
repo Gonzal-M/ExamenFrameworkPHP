@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Posts;
+use DB;
 
 class PostsController extends Controller
 {
     //Affichage Des Publications
-    public  function posts(){
+    public function posts(){
         $posts = Posts::all();
         return view('Posts/posts', [
             'posts' => $posts,
@@ -35,7 +36,11 @@ class PostsController extends Controller
             'user_id' => auth()->id(),
         ]);
 
-        posts();
+        //Retourne sur la page d'administration des publications
+        $posts = Posts::all();
+        return view('Posts/posts', [
+            'posts' => $posts,
+        ] );
     }
 
 
@@ -43,7 +48,12 @@ class PostsController extends Controller
     //Suppression Publication
     public function delPost(){
         DB::table('posts')->where('id', request('del_id'))->delete();
-        posts();
+        
+        //Retourne sur la page d'administration des publications
+        $posts = Posts::all();
+        return view('Posts/posts', [
+            'posts' => $posts,
+        ] );
     }
 
 
@@ -57,24 +67,20 @@ class PostsController extends Controller
 
         $post = DB::table('posts')->where('id', request('mod_id'));
 
-        //Récupère l'ancien titre et contenu de la publication
-        $posttitle=$post->posttitle;
-        $postcontent=$post->postcontent;
-
         //Vérifie si le titre de la publication a été modifié
-        if($posttitle != request('posttitle')){
-            $posttitle = request('posttitle');
+        if($post->posttitle != request('posttitle')){
+            $post->posttitle = request('posttitle');
         }
         //Vérifie si le contenu de la publication a été modifié
-        if($postcontent != request('postcontent')){
-            $postcontent = request('postcontent');
+        if($post->postcontent != request('postcontent')){
+            $post->postcontent = request('postcontent');
         }
-
+        $post->save();
         //Modifie le titre et contenu de l'article s'ils ont été modifiés
-        DB::table('posts')->where('id', request('mod_id'))->update([
-            'posttitle' => $posttitle,
-            'postcontent' => $postcontent,
-        ]);
+        //DB::table('posts')->where('id', request('mod_id'))->update([
+        //    'posttitle' => request('posttitle'),
+        //    'postcontent' => request('postcontent'),
+        //]);
 
         //Vérifie si la photo a été modifiée et la modifie
         if(request('postpic') != NULL){
@@ -83,7 +89,11 @@ class PostsController extends Controller
             ]);
         }
 
-        posts();
+        //Retourne sur la page d'administration des publications
+        $posts = Posts::all();
+        return view('Posts/posts', [
+            'posts' => $posts,
+        ] );
     }
 
 }
