@@ -20,7 +20,7 @@
             @else
 
             <ul>
-                <a href="" class="btn btn-info">Profil</a>
+                <a href="/posts" class="btn btn-info">Profil</a>
 
                 <a href="{{url('/password_modification')}}" class="btn btn-info">Modification Mot de Passe</a>
 
