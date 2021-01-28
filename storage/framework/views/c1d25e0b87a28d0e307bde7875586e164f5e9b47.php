@@ -2,9 +2,11 @@
 
 <?php $__env->startSection('contenu'); ?>
 
-<h1>Vos publications</h1>
+<h1>Vos publications</h1><br>
 
-<ul>
+<a href="/newpost" class="btn btn-info">Nouvelle publication</a>
+
+<ul><br>
 <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 <li class="row">
 
@@ -24,7 +26,7 @@
         </form>
     </div>
 
-</li>
+</li><br>
 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </ul>
 

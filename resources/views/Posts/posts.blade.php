@@ -2,9 +2,11 @@
 
 @section('contenu')
 
-<h1>Vos publications</h1>
+<h1>Vos publications</h1><br>
 
-<ul>
+<a href="/newpost" class="btn btn-info">Nouvelle publication</a>
+
+<ul><br>
 @foreach($posts as $post)
 <li class="row">
 
@@ -23,7 +25,7 @@
         </form>
     </div>
 
-</li>
+</li><br>
 @endforeach
 </ul>
 

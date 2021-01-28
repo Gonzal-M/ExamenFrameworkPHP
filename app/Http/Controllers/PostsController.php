@@ -10,7 +10,7 @@ class PostsController extends Controller
 {
     //Affichage Des Publications
     public function posts(){
-        $posts = Posts::all();
+        $posts = Posts::all()->sortByDesc('created_at');
         return view('Posts/posts', [
             'posts' => $posts,
         ] );
@@ -37,7 +37,7 @@ class PostsController extends Controller
         ]);
 
         //Retourne sur la page d'administration des publications
-        $posts = Posts::all();
+        $posts = Posts::all()->sortByDesc('created_at');
         return view('Posts/posts', [
             'posts' => $posts,
         ] );
@@ -50,7 +50,7 @@ class PostsController extends Controller
         DB::table('posts')->where('id', request('del_id'))->delete();
         
         //Retourne sur la page d'administration des publications
-        $posts = Posts::all();
+        $posts = Posts::all()->sortByDesc('created_at');
         return view('Posts/posts', [
             'posts' => $posts,
         ] );
@@ -90,7 +90,7 @@ class PostsController extends Controller
         }
 
         //Retourne sur la page d'administration des publications
-        $posts = Posts::all();
+        $posts = Posts::all()->sortByDesc('created_at');
         return view('Posts/posts', [
             'posts' => $posts,
         ] );
