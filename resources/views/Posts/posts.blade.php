@@ -16,7 +16,10 @@
         <p>{{$post->postcontent}}</p><br>
         <p style="color:grey;">{{$post->created_at}}</p>
         <a href="" class="btn btn-info">Modifier</a>
-        <a href="" class="btn btn-danger">Supprimer</a>
+        <form action="/posts" method="post">
+            <input type="hidden" name="id" value="{{$post->id}}">
+            <input type="submit" value="Supprimer" class="btn btn-danger">
+        </form>
     </div>
 
 </li>
