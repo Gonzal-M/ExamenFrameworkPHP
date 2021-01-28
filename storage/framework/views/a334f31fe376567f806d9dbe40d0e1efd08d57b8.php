@@ -11,7 +11,9 @@
             <ul>
                 <a href="<?php echo e(url('/inscription')); ?>" class="btn btn-info">Inscription</a>
 
-                <a href="<?php echo e(url('connexion')); ?>" class="btn btn-info">Connexion</a>
+                <a href="<?php echo e(url('/connexion')); ?>" class="btn btn-info">Connexion</a>
+
+                <a href="<?php echo e(url('/users')); ?>" class="btn btn-info">Utilisateurs</a>
 
             </ul>
 

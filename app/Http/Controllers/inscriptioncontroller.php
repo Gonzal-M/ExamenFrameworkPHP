@@ -31,4 +31,9 @@ class inscriptioncontroller extends Controller
         ]);
         return "You have successfully registered and your email is " . request('email');
     }
+
+    // public function store()
+    // {
+    //     Mail::to($user->email)->send(new SignUp($user));
+    // }
 }

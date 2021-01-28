@@ -11,7 +11,9 @@
             <ul>
                 <a href="{{url('/inscription')}}" class="btn btn-info">Inscription</a>
 
-                <a href="{{url('connexion')}}" class="btn btn-info">Connexion</a>
+                <a href="{{url('/connexion')}}" class="btn btn-info">Connexion</a>
+
+                <a href="{{url('/users')}}" class="btn btn-info">Utilisateurs</a>
 
             </ul>
 
