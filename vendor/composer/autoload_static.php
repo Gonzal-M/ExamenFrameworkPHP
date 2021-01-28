@@ -532,11 +532,8 @@ class ComposerStaticInitb7d0b392d0b698740f113699ef3b6e08
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-<<<<<<< HEAD
         'App\\Http\\Controllers\\PostsController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostsController.php',
-=======
         'App\\Http\\Controllers\\inscriptioncontroller' => __DIR__ . '/../..' . '/app/Http/Controllers/inscriptioncontroller.php',
->>>>>>> 0adce8affc4ff33d0117fa92516d5468bef62905
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
