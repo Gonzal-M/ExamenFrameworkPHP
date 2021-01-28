@@ -3,4 +3,4 @@ Examen Framework PHP - B2A Informatique
 - Gonzalez Marie
 
 
-- Dupuy GUillaume
+- Dupuy Guillaume
