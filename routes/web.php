@@ -40,25 +40,25 @@ Route::get('/', function () {
     return view('index');
 });
 
-<<<<<<< HEAD
-//Nouvelles Publications
-Route::get('/newpost', 'App\Http\Controllers\PostsController@viewNewPost');
-Route::post('/newpost', 'App\Http\Controllers\PostsController@addNewPost');
-Route::get('/posts', 'App\Http\Controllers\PostsController@posts');
-=======
-
->>>>>>> 4576ad6cae8c8646824d680c92866dd04803090b
-
-
-
-Route::get('/users', 'App\Http\Controllers\userscontroller@index');
-
-Route::get('/users/{id}', 'App\Http\Controllers\userscontroller@show')->name('Show.User');
-
 Route::get('/inscription', 'App\Http\Controllers\inscriptioncontroller@inscription');
 
 Route::post('/inscription', 'App\Http\Controllers\inscriptioncontroller@formulaire');
 
-Route::get('connexion', 'App\Http\Controllers\connexioncontroller@form');
+Route::get('/connexion', 'App\Http\Controllers\connexioncontroller@form');
 
-Route::post('connexion', 'App\Http\Controllers\connexioncontroller@connexion');
+Route::post('/connexion', 'App\Http\Controllers\connexioncontroller@connexion');
+
+// <<<<<<< HEAD
+// //Nouvelles Publications
+// Route::get('/newpost', 'App\Http\Controllers\PostsController@viewNewPost');
+// Route::post('/newpost', 'App\Http\Controllers\PostsController@addNewPost');
+// Route::get('/posts', 'App\Http\Controllers\PostsController@posts');
+// =======
+
+// >>>>>>> 4576ad6cae8c8646824d680c92866dd04803090b
+
+
+
+// Route::get('/users', 'App\Http\Controllers\userscontroller@index');
+
+// Route::get('/users/{id}', 'App\Http\Controllers\userscontroller@show')->name('Show.User');
