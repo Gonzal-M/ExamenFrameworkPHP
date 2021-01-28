@@ -5,6 +5,10 @@
 <h1>Nouvelle publication</h1><br>
 
 <form action="/newpost" method="post" enctype="multipart/form-data" style="margin-left:10px;">
+<<<<<<< HEAD
+=======
+    {{csrf_field()}}
+>>>>>>> 4576ad6cae8c8646824d680c92866dd04803090b
 
     <div class="row">
         <label class="col-1">Titre :</label>
