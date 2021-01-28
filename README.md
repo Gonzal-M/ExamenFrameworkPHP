@@ -4,6 +4,13 @@ Examen Framework PHP - B2A Informatique
   - Création du modèle Posts
   - CRUD des publications
   - Affichage des publications de la plus récente à la plus ancienne sur la page d'accueil
+  - Cloudinary
 
 
-- Dupuy Guillaume
+- Dupuy Guillaume :
+  - Inscription
+  - Dashboard
+  - Connexion
+  - Authentification
+  - Email
+
