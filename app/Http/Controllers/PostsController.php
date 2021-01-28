@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Post;
+use App\Models\Posts;
 
 class PostsController extends Controller
 {
+    public  function posts(){
+        $posts = Posts::all();
+        return view('Posts/posts', [
+            'posts' => $posts,
+        ] );
+    }
+
     public  function viewNewPost(){
         return view('Posts/newpost');
     }
@@ -19,7 +26,7 @@ class PostsController extends Controller
             'postpic' => ['required'],
         ]);
 
-        Post::create([ 
+        Posts::create([ 
             'name' => request('posttitle'),
             'description' => request('postcontent'), 
             'photo' => cloudinary()->upload(request()->file('postpic')->getRealPath())->getSecurePath(),
