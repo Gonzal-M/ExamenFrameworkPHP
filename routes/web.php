@@ -13,6 +13,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group([
+    'middleware' => 'App\Http\Middleware\Auth',
+], function () {
+    Route::post('/password_modification', 'App\Http\Controllers\accountController@password_modification');
+    Route::get('/password_modification', 'App\Http\Controllers\accountController@form_password_modification');
+
+    Route::get('/dashboard', 'App\Http\Controllers\accountcontroller@dashboard');
+
+    Route::get('signout', 'App\Http\Controllers\accountcontroller@signout');
 });
+
+Route::get('/', function () {
+    return view('index');
+});
+
+Route::get('/users', 'App\Http\Controllers\userscontroller@index');
+
+Route::get('/users/{id}', 'App\Http\Controllers\userscontroller@show')->name('Show.User');
+
+Route::get('/inscription', 'App\Http\Controllers\inscriptioncontroller@inscription');
+
+Route::post('/inscription', 'App\Http\Controllers\inscriptioncontroller@formulaire');
+
+Route::get('connexion', 'App\Http\Controllers\connexioncontroller@form');
+
+Route::post('connexion', 'App\Http\Controllers\connexioncontroller@connexion');
