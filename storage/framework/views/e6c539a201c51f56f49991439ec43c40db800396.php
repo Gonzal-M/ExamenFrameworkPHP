@@ -1,0 +1,1 @@
+<?php /**PATH D:\Ynov\B2\PHP\ExamenFrameworkPHP\resources\views/footer.blade.php ENDPATH**/ ?>

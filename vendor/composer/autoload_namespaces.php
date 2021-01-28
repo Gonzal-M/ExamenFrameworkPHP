@@ -8,4 +8,5 @@ $baseDir = dirname($vendorDir);
 return array(
     'Teapot' => array($vendorDir . '/shrikeh/teapot/src'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
+    'Laracasts\\Flash' => array($vendorDir . '/laracasts/flash/src'),
 );
