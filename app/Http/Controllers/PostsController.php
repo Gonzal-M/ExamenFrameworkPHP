@@ -65,7 +65,7 @@ class PostsController extends Controller
 
     public function modPost(){
 
-        $post = DB::table('posts')->where('id', request('mod_id'));
+        $post = DB::table('posts')->where('id', request('mod_id'))->first();
 
         //Vérifie si le titre de la publication a été modifié
         if($post->posttitle != request('posttitle')){
@@ -75,12 +75,12 @@ class PostsController extends Controller
         if($post->postcontent != request('postcontent')){
             $post->postcontent = request('postcontent');
         }
-        $post->save();
+
         //Modifie le titre et contenu de l'article s'ils ont été modifiés
-        //DB::table('posts')->where('id', request('mod_id'))->update([
-        //    'posttitle' => request('posttitle'),
-        //    'postcontent' => request('postcontent'),
-        //]);
+        DB::table('posts')->where('id', request('mod_id'))->update([
+            'posttitle' => request('posttitle'),
+            'postcontent' => request('postcontent'),
+        ]);
 
         //Vérifie si la photo a été modifiée et la modifie
         if(request('postpic') != NULL){
