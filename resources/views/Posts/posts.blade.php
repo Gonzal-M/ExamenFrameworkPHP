@@ -14,10 +14,10 @@
     <div class="col">
         <h3>{{$post->posttitle}}</h3>
         <p>{{$post->postcontent}}</p><br>
-        <p style="color:grey;">{{$post->created_at}}</p>
-        <a href="" class="btn btn-info">Modifier</a>
+        <p style="color:grey;">Publié le {{$post->created_at}}</p>
+        <a href="/modpost?post_id={{$post->id}}" class="btn btn-info">Modifier</a>
         <form action="/posts" method="post">
-            <input type="hidden" name="id" value="{{$post->id}}">
+            <input type="hidden" name="del_id" value="{{$post->id}}">
             <input type="submit" value="Supprimer" class="btn btn-danger">
         </form>
     </div>
