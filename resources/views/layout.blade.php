@@ -5,7 +5,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Examen de Framework PHP de Gonzalez Marie - B2A Informatique">
+    <meta name="description" content="Examen de Framework PHP de Gonzalez Marie et Dupuy Guillaume - B2A Informatique">
     <meta name="author" content="GONZALEZ Marie, DUPUY Guillaume">
 
     <title>Examen Framework PHP</title>
